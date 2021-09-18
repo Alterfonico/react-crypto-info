@@ -1,4 +1,17 @@
+import { cryptoDatabase } from './CryptoDatabase';
 import './App.css';
+
+// Creating an array to display the logos
+const logosArray = [];
+for (const key in cryptoDatabase) {logosArray.push(
+  <img 
+    key={key}
+    alt={key}
+    src={cryptoDatabase[key].image}
+  />
+);}
+
+// Lorem ipsum dolor sit amet, consectetur adipiscing
 
 function App() {
   return (
@@ -10,7 +23,7 @@ function App() {
       </header>
 
       <section class="logos-wrapper">
-        <div class="div-logo"></div>
+        <div class="div-logo">{logosArray}</div>
         <div class="div-logo eth"></div>
         <div class="div-logo ada"></div>
         <div class="div-logo bnb"></div>
@@ -32,12 +45,13 @@ function App() {
             <br />
             Homepage:
             <br />
-            Genesis Date:{" "}
+            Genesis Date:
           </p>
           <p>
             #1
             <br />
-            $966 B<br />
+            $966 B
+            <br />
             bitcoin.org
             <br />
             January 3, 2009
