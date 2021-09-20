@@ -7,7 +7,8 @@ export const cryptoDatabase = {
         genesisDate: ['January 3, 2009']
     },
     ethereum: {
+        rank: '#2'
 
-    },
+    }
     
 };
