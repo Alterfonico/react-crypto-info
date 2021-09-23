@@ -1,5 +1,6 @@
 export const cryptoDatabase = {
     bitcoin: {
+        name: 'bitcoin',
         image: 'https://cryptologos.cc/logos/bitcoin-btc-logo.svg?v=013',
         rank: '#1',
         marketCap: ['$966 B'],
@@ -7,6 +8,7 @@ export const cryptoDatabase = {
         genesisDate: ['January 3, 2009']
     },
     ethereum: {
+        name: 'ethereum',
         rank: '#2'
 
     }

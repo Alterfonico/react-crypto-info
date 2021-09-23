@@ -6,16 +6,24 @@ import RowLogos from './RowLogos';
 
 // Creating a function to handle the event of displaying the details about the coin
 
+// console.log("fooArray", cryptoDatabase);
+// const testArray = [];
+// testArray.push(cryptoDatabase.bitcoin.rank)
 
-console.log("fooArray", cryptoDatabase);
-const serchArray = [];
-serchArray.push(cryptoDatabase.bitcoin.rank)
+// const jsonString = JSON.stringify(cryptoDatabase.bitcoin);
+// const jsonObject = JSON.parse(jsonString);
 
 
-export function displayDetails() {
+
+export function displayDetails(e) {
+    const targetValue = e.target.alt;
+    const selectCoin = cryptoDatabase[targetValue];
+    const objectToString = JSON.stringify(selectCoin);
+
+    document.getElementById("deets").innerHTML = objectToString; 
+    console.log(selectCoin);
     
 }
-
 
 
 export default function CoinDetails() {
@@ -24,7 +32,7 @@ export default function CoinDetails() {
         <main className="div-description">
 
             <div className="grid-description">
-                { <RowLogos />}
+                
 
                 {/* <img
                     src="images/bitcoin-btc-logo.svg"
@@ -42,7 +50,7 @@ export default function CoinDetails() {
                     <br />
                     Genesis Date:
                 </p>
-                <p>{serchArray}</p>
+                <p id="deets">{displayDetails}</p>
             </div>
             <p>
             Bitcoin is the first successful internet money based on peer-to-peer
@@ -64,14 +72,14 @@ export default function CoinDetails() {
 //     CoinData.map((coinDetails, index) => {
 //         return <p>{coinDetails.rank}</p>
 //     })
-//     // const selectedCoin = event.target.alt;
-//     // const coinInfo = cryptoDatabase[selectedCoin];
+//     // const targetValue = event.target.alt;
+//     // const coinInfo = cryptoDatabase[targetValue];
 // }
 
 
 
 // const [stateCoins, setStateCoins] = useState(0);
 // const coinHandler = function (event) { 
-//     const selectedCoin = event.target.value;
-//     console.log(selectedCoin);
+//     const targetValue = event.target.value;
+//     console.log(targetValue);
 // }
