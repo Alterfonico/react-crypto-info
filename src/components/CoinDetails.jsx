@@ -13,25 +13,34 @@ import RowLogos from './RowLogos';
 // const jsonString = JSON.stringify(cryptoDatabase.bitcoin);
 // const jsonObject = JSON.parse(jsonString);
 
-
-
-export function displayDetails(e) {
+export function triggerEvents(e) {
     const targetValue = e.target.alt;
     const selectCoin = cryptoDatabase[targetValue];
     const objectToString = JSON.stringify(selectCoin);
+    document.getElementById("deets").innerHTML = objectToString
+    
 
-    document.getElementById("deets").innerHTML = objectToString; 
-    console.log(selectCoin);
+    
+
     
 }
 
+function coinLogo() {
 
-export default function CoinDetails() {
+}
+
+function displayDetails(triggerEvents) {
+}
+
+
+
+export default function CoinDetails({image} ) {
 
     return (
         <main className="div-description">
 
             <div className="grid-description">
+                <img src={cryptoDatabase.image} alt="" />
                 
 
                 {/* <img
@@ -42,6 +51,10 @@ export default function CoinDetails() {
                 /> */}
 
                 <p className="p-query">
+                    Name:
+                    <br />
+                    Code:
+                    <br />
                     Market Cap Rank:
                     <br />
                     Market Cap:
@@ -50,7 +63,7 @@ export default function CoinDetails() {
                     <br />
                     Genesis Date:
                 </p>
-                <p id="deets">{displayDetails}</p>
+                <p id="deets">{triggerEvents}</p>
             </div>
             <p>
             Bitcoin is the first successful internet money based on peer-to-peer
